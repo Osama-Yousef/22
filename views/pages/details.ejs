@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>details</title>
+</head>
+<body>
+    
+<header>
+    <h1>
+        Movies Details :
+    </h1>
+</header>
+<main>
+
+<div class="allContainer">
+
+
+<div class="container">
+
+    <img src="<%=data.image%>" alt="">
+    <h2><%=data.title%></h2>
+    <h3><%=data.language%></h3>
+    <h4><%=data.vote%></h4>
+    <p><%=data.overview%></p>
+
+    <div>
+<button class="showdet">update this</button>
+
+<form action="/update/<%=data.id%>?_method=put" method="POST" class="formdet">
+
+<input type="text" name="image" value="<%=data.image%>">
+<input type="text" name="title" value="<%=data.title%>">
+<input type="text" name="language" value="<%=data.language%>">
+<input type="text" name="vote" value="<%=data.vote%>">
+<input type="text" name="overview" value="<%=data.overview%>">
+
+<input type="submit"  value="update">
+
+</form>
+
+    </div>
+
+<form action="/delete/<%=data.id%>?_method=delete" method="POST">
+    <button>delete</button>
+</form>
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+</main>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../js/app.js"></script>
+
+</body>
+</html>

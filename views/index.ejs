@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>home page</title>
+</head>
+<body>
+    
+<header>
+    <h1>
+        All Movies
+    </h1>
+</header>
+<main>
+
+<div class="allContainer">
+
+<%data.forEach(val=>{%>
+
+<div class="container">
+
+    <img src="<%=val.image%>" alt="">
+    <h2><%=val.title%></h2>
+    <h3><%=val.language%></h3>
+    <h4><%=val.vote%></h4>
+    <p><%=val.overview%></p>
+
+    <div>
+<button class="show">select</button>
+
+<form action="/addToDb" method="GET" class="form">
+
+<input type="text" name="image" value="<%=val.image%>">
+<input type="text" name="title" value="<%=val.title%>">
+<input type="text" name="language" value="<%=val.language%>">
+<input type="text" name="vote" value="<%=val.vote%>">
+<input type="text" name="overview" value="<%=val.overview%>">
+
+<input type="submit"  value="add to favorite">
+
+</form>
+
+    </div>
+
+</div>
+
+
+<%})%>
+
+</div>
+
+</main>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
